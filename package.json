@@ -1,0 +1,34 @@
+{
+  "name": "lingva-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.20.0",
+  "engines": {
+    "node": ">=26.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --stream --filter @lingva-demo/shell --filter @lingva-demo/react --filter @lingva-demo/angular --filter @lingva-demo/vue --filter @lingva-demo/svelte --filter @lingva-demo/vanilla dev",
+    "build": "pnpm lingva:check && pnpm lingva:artifacts && pnpm build:web && pnpm build:swift",
+    "build:web": "pnpm --recursive --filter @lingva-demo/shell --filter @lingva-demo/react --filter @lingva-demo/angular --filter @lingva-demo/vue --filter @lingva-demo/svelte --filter @lingva-demo/vanilla build",
+    "build:swift": "swift build --package-path apps/native/swift",
+    "build:kotlin": "apps/native/kotlin/gradlew -p apps/native/kotlin assembleDebug",
+    "build:flutter": "pnpm --dir apps/native/flutter exec flutter build web",
+    "test:swift": "swift run --package-path apps/native/swift LingvaDemoVerification",
+    "test:kotlin": "apps/native/kotlin/gradlew -p apps/native/kotlin testDebugUnitTest",
+    "test:flutter": "pnpm --dir apps/native/flutter exec flutter test",
+    "lingva": "lingva",
+    "lingva:sync": "lingva sync packages/i18n/lingva.config.ts",
+    "lingva:check": "lingva check packages/i18n/lingva.config.ts",
+    "lingva:artifacts": "lingva publish packages/i18n/lingva.config.ts --locale en,ru --output-dir packages/i18n/.lingva/artifacts/publish && node scripts/sync-native-bundles.mjs",
+    "hosted:publish": "node --env-file-if-exists=.env.hosted scripts/publish-hosted.mjs",
+    "hosted:verify": "node --env-file-if-exists=.env.hosted scripts/verify-hosted-delivery.mjs",
+    "format": "prettier . --write --ignore-unknown",
+    "format:check": "prettier . --check --ignore-unknown"
+  },
+  "devDependencies": {
+    "@lingva/cli": "link:../lingva/packages/cli",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  }
+}

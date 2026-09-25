@@ -1,0 +1,105 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out demo
+        uses: actions/checkout@v6
+        with:
+          path: lingva-demo
+      - name: Set up repositories
+        uses: ./lingva-demo/.github/actions/setup-lingva
+        with:
+          repository-token: ${{ secrets.LINGVA_REPOSITORY_TOKEN || github.token }}
+      - name: Validate translations and build web applications
+        working-directory: lingva-demo
+        run: |
+          pnpm lingva:sync
+          pnpm lingva:check
+          pnpm build:web
+          pnpm format:check
+          git diff --exit-code
+
+  swift:
+    runs-on: macos-latest
+    steps:
+      - name: Check out demo
+        uses: actions/checkout@v6
+        with:
+          path: lingva-demo
+      - name: Set up repositories
+        uses: ./lingva-demo/.github/actions/setup-lingva
+        with:
+          repository-token: ${{ secrets.LINGVA_REPOSITORY_TOKEN || github.token }}
+      - name: Generate bundles and verify Swift
+        working-directory: lingva-demo
+        run: |
+          pnpm lingva:artifacts
+          pnpm test:swift
+          pnpm build:swift
+
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out demo
+        uses: actions/checkout@v6
+        with:
+          path: lingva-demo
+      - name: Set up repositories
+        uses: ./lingva-demo/.github/actions/setup-lingva
+        with:
+          repository-token: ${{ secrets.LINGVA_REPOSITORY_TOKEN || github.token }}
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v6
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+      - name: Generate bundles and verify Android
+        working-directory: lingva-demo
+        run: |
+          pnpm lingva:artifacts
+          pnpm test:kotlin
+          pnpm build:kotlin
+
+  flutter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out demo
+        uses: actions/checkout@v6
+        with:
+          path: lingva-demo
+      - name: Set up repositories
+        uses: ./lingva-demo/.github/actions/setup-lingva
+        with:
+          repository-token: ${{ secrets.LINGVA_REPOSITORY_TOKEN || github.token }}
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.47.2
+          cache: true
+      - name: Generate bundles and verify Flutter
+        working-directory: lingva-demo
+        run: pnpm lingva:artifacts
+      - name: Install Flutter dependencies
+        working-directory: lingva-demo/apps/native/flutter
+        run: flutter pub get
+      - name: Analyze, test, and build Flutter
+        working-directory: lingva-demo/apps/native/flutter
+        run: |
+          flutter analyze
+          flutter test
+          flutter build web

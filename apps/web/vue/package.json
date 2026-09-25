@@ -1,0 +1,21 @@
+{
+  "name": "@lingva-demo/vue",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4103",
+    "build": "vue-tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "@lingva-demo/i18n": "workspace:*",
+    "@lingva/vue": "link:../../../../lingva/packages/vue",
+    "@vitejs/plugin-vue": "6.0.8",
+    "vite": "8.3.0",
+    "vue": "3.5.42"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "vue-tsc": "3.2.5"
+  }
+}

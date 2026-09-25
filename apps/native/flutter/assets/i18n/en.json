@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 1,
+  "projectId": "lingva-framework-demo",
+  "environment": "dev",
+  "locale": "en",
+  "defaultLocale": "en",
+  "fallbackLocale": "en",
+  "generatedAt": "2026-09-25T15:42:15.621Z",
+  "keyCount": 25,
+  "fallbackKeys": [],
+  "messages": {
+    "demo.cta": "Explore Lingva documentation",
+    "demo.eyebrow": "Lingva framework laboratory",
+    "demo.featureBody": "Every application reads the same Lingva keys, interpolation variables, fallback locale, and generated delivery bundles.",
+    "demo.featureTitle": "Shared localization contract",
+    "demo.frameworkLabel": "Current implementation",
+    "demo.greeting": "Hello, {name}! This screen is powered by {framework}.",
+    "demo.loading": "Loading {framework}…",
+    "demo.localeLabel": "Language",
+    "demo.nativeHint": "Swift, Kotlin, and Flutter consume the same versioned Lingva bundle through ecosystem-native SDK previews.",
+    "demo.nativeTitle": "Native applications",
+    "demo.openStandalone": "Open standalone",
+    "demo.shellHint": "Choose an implementation. Each web demo runs as an isolated microfrontend.",
+    "demo.shellTitle": "Framework demos",
+    "demo.subtitle": "The same interface and translation contract rendered by independent web and native applications.",
+    "demo.title": "One product, every framework",
+    "frameworks.angular": "Angular",
+    "frameworks.flutter": "Flutter",
+    "frameworks.kotlin": "Kotlin",
+    "frameworks.react": "React",
+    "frameworks.svelte": "Svelte",
+    "frameworks.swift": "Swift",
+    "frameworks.vanilla": "JavaScript",
+    "frameworks.vue": "Vue",
+    "locales.en": "English",
+    "locales.ru": "Russian"
+  },
+  "sources": {
+    "demo.cta": "en",
+    "demo.eyebrow": "en",
+    "demo.featureBody": "en",
+    "demo.featureTitle": "en",
+    "demo.frameworkLabel": "en",
+    "demo.greeting": "en",
+    "demo.loading": "en",
+    "demo.localeLabel": "en",
+    "demo.nativeHint": "en",
+    "demo.nativeTitle": "en",
+    "demo.openStandalone": "en",
+    "demo.shellHint": "en",
+    "demo.shellTitle": "en",
+    "demo.subtitle": "en",
+    "demo.title": "en",
+    "frameworks.angular": "en",
+    "frameworks.flutter": "en",
+    "frameworks.kotlin": "en",
+    "frameworks.react": "en",
+    "frameworks.svelte": "en",
+    "frameworks.swift": "en",
+    "frameworks.vanilla": "en",
+    "frameworks.vue": "en",
+    "locales.en": "en",
+    "locales.ru": "en"
+  },
+  "variables": {
+    "demo.cta": [],
+    "demo.eyebrow": [],
+    "demo.featureBody": [],
+    "demo.featureTitle": [],
+    "demo.frameworkLabel": [],
+    "demo.greeting": [
+      "framework",
+      "name"
+    ],
+    "demo.loading": [
+      "framework"
+    ],
+    "demo.localeLabel": [],
+    "demo.nativeHint": [],
+    "demo.nativeTitle": [],
+    "demo.openStandalone": [],
+    "demo.shellHint": [],
+    "demo.shellTitle": [],
+    "demo.subtitle": [],
+    "demo.title": [],
+    "frameworks.angular": [],
+    "frameworks.flutter": [],
+    "frameworks.kotlin": [],
+    "frameworks.react": [],
+    "frameworks.svelte": [],
+    "frameworks.swift": [],
+    "frameworks.vanilla": [],
+    "frameworks.vue": [],
+    "locales.en": [],
+    "locales.ru": []
+  },
+  "metadata": {
+    "demo.cta": {
+      "description": "Link label for opening the Lingva documentation",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.eyebrow": {
+      "description": "Short product label above the demo title",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.featureBody": {
+      "description": "Explanation of the shared localization contract",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.featureTitle": {
+      "description": "Heading for the shared localization contract card",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.frameworkLabel": {
+      "description": "Label identifying the active framework",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.greeting": {
+      "description": "Greeting interpolated with a user and framework name",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "tags": [
+        "demo",
+        "interpolation"
+      ],
+      "translator": "demo-team"
+    },
+    "demo.loading": {
+      "description": "Microfrontend loading feedback interpolated with a framework name",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.localeLabel": {
+      "description": "Accessible label for locale controls",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.nativeHint": {
+      "description": "Explanation of how native applications consume Lingva bundles",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.nativeTitle": {
+      "description": "Heading for the native application list",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.openStandalone": {
+      "description": "Link label for opening a microfrontend directly",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.shellHint": {
+      "description": "Instructions shown by the microfrontend host",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.shellTitle": {
+      "description": "Main heading of the microfrontend host",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.subtitle": {
+      "description": "Supporting text shared by every framework demo",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "demo.title": {
+      "description": "Primary heading shared by every framework demo",
+      "namespace": "demo",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "tags": [
+        "demo",
+        "heading"
+      ],
+      "translator": "demo-team"
+    },
+    "frameworks.angular": {
+      "description": "Display name for the Angular implementation",
+      "namespace": "frameworks",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "frameworks.flutter": {
+      "description": "Display name for the Flutter implementation",
+      "namespace": "frameworks",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "frameworks.kotlin": {
+      "description": "Display name for the Kotlin implementation",
+      "namespace": "frameworks",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "frameworks.react": {
+      "description": "Display name for the React implementation",
+      "namespace": "frameworks",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "frameworks.svelte": {
+      "description": "Display name for the Svelte implementation",
+      "namespace": "frameworks",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "frameworks.swift": {
+      "description": "Display name for the Swift implementation",
+      "namespace": "frameworks",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "frameworks.vanilla": {
+      "description": "Display name for the plain JavaScript implementation",
+      "namespace": "frameworks",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "frameworks.vue": {
+      "description": "Display name for the Vue implementation",
+      "namespace": "frameworks",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "locales.en": {
+      "description": "Localized display name for English",
+      "namespace": "locales",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    },
+    "locales.ru": {
+      "description": "Localized display name for Russian",
+      "namespace": "locales",
+      "reviewer": "demo-team",
+      "status": "approved",
+      "translator": "demo-team"
+    }
+  },
+  "entries": [
+    {
+      "key": "demo.cta",
+      "value": "Explore Lingva documentation",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.eyebrow",
+      "value": "Lingva framework laboratory",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.featureBody",
+      "value": "Every application reads the same Lingva keys, interpolation variables, fallback locale, and generated delivery bundles.",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.featureTitle",
+      "value": "Shared localization contract",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.frameworkLabel",
+      "value": "Current implementation",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.greeting",
+      "value": "Hello, {name}! This screen is powered by {framework}.",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [
+        "framework",
+        "name"
+      ],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.loading",
+      "value": "Loading {framework}…",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [
+        "framework"
+      ],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.localeLabel",
+      "value": "Language",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.nativeHint",
+      "value": "Swift, Kotlin, and Flutter consume the same versioned Lingva bundle through ecosystem-native SDK previews.",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.nativeTitle",
+      "value": "Native applications",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.openStandalone",
+      "value": "Open standalone",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.shellHint",
+      "value": "Choose an implementation. Each web demo runs as an isolated microfrontend.",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.shellTitle",
+      "value": "Framework demos",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.subtitle",
+      "value": "The same interface and translation contract rendered by independent web and native applications.",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "demo.title",
+      "value": "One product, every framework",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "demo"
+    },
+    {
+      "key": "frameworks.angular",
+      "value": "Angular",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "frameworks"
+    },
+    {
+      "key": "frameworks.flutter",
+      "value": "Flutter",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "frameworks"
+    },
+    {
+      "key": "frameworks.kotlin",
+      "value": "Kotlin",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "frameworks"
+    },
+    {
+      "key": "frameworks.react",
+      "value": "React",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "frameworks"
+    },
+    {
+      "key": "frameworks.svelte",
+      "value": "Svelte",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "frameworks"
+    },
+    {
+      "key": "frameworks.swift",
+      "value": "Swift",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "frameworks"
+    },
+    {
+      "key": "frameworks.vanilla",
+      "value": "JavaScript",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "frameworks"
+    },
+    {
+      "key": "frameworks.vue",
+      "value": "Vue",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "frameworks"
+    },
+    {
+      "key": "locales.en",
+      "value": "English",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "locales"
+    },
+    {
+      "key": "locales.ru",
+      "value": "Russian",
+      "sourceLocale": "en",
+      "fallback": false,
+      "variables": [],
+      "namespace": "locales"
+    }
+  ]
+}

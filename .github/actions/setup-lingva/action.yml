@@ -1,0 +1,44 @@
+name: Set up Lingva demo
+description: Checks out and builds the private Lingva SDK before installing the demo.
+inputs:
+  repository-token:
+    description: Token that can read the usausoft/lingva repository.
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Check out Lingva SDK source
+      uses: actions/checkout@v6
+      with:
+        repository: usausoft/lingva
+        path: lingva
+        token: ${{ inputs.repository-token }}
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: 26
+
+    - name: Set up pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10.20.0
+
+    - name: Install Lingva dependencies
+      shell: bash
+      working-directory: lingva
+      run: pnpm install --frozen-lockfile
+
+    - name: Build linked Lingva packages
+      shell: bash
+      working-directory: lingva
+      run: |
+        pnpm --filter @lingva/core build
+        pnpm --filter @lingva/js build
+        pnpm --filter @lingva/react build
+        pnpm --filter @lingva/cli build
+
+    - name: Install demo dependencies
+      shell: bash
+      working-directory: lingva-demo
+      run: pnpm install --frozen-lockfile

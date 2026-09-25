@@ -1,0 +1,33 @@
+{
+  "demo": {
+    "cta": "Открыть документацию Lingva",
+    "eyebrow": "Лаборатория фреймворков Lingva",
+    "featureBody": "Все приложения используют одинаковые ключи Lingva, переменные интерполяции, резервный язык и сгенерированные delivery-бандлы.",
+    "featureTitle": "Единый контракт локализации",
+    "frameworkLabel": "Текущая реализация",
+    "greeting": "Привет, {name}! Этот экран работает на {framework}.",
+    "loading": "Загрузка {framework}…",
+    "localeLabel": "Язык",
+    "nativeHint": "Swift, Kotlin и Flutter используют один версионированный Lingva-бандл через нативные preview SDK.",
+    "nativeTitle": "Нативные приложения",
+    "openStandalone": "Открыть отдельно",
+    "shellHint": "Выберите реализацию. Каждое веб-демо работает как изолированный микрофронтенд.",
+    "shellTitle": "Демо фреймворков",
+    "subtitle": "Одинаковый интерфейс и контракт переводов в независимых веб- и нативных приложениях.",
+    "title": "Один продукт для всех фреймворков"
+  },
+  "frameworks": {
+    "angular": "Angular",
+    "flutter": "Flutter",
+    "kotlin": "Kotlin",
+    "react": "React",
+    "svelte": "Svelte",
+    "swift": "Swift",
+    "vanilla": "JavaScript",
+    "vue": "Vue"
+  },
+  "locales": {
+    "en": "Английский",
+    "ru": "Русский"
+  }
+}

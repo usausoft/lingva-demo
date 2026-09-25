@@ -1,0 +1,42 @@
+name: Hosted delivery
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: Publish first, or only verify the currently hosted bundles.
+        required: true
+        default: verify
+        type: choice
+        options: [verify, publish]
+
+permissions:
+  contents: read
+
+jobs:
+  delivery:
+    runs-on: ubuntu-latest
+    environment: Development
+    env:
+      LINGVA_DEMO_BUNDLE_URL_TEMPLATE: ${{ vars.LINGVA_DEMO_BUNDLE_URL_TEMPLATE }}
+      LINGVA_DEMO_PUBLISH_API_URL: ${{ vars.LINGVA_DEMO_PUBLISH_API_URL }}
+      LINGVA_DEMO_PUBLISH_TOKEN: ${{ secrets.LINGVA_DEMO_PUBLISH_TOKEN }}
+    steps:
+      - name: Check out demo
+        uses: actions/checkout@v6
+        with:
+          path: lingva-demo
+      - name: Set up repositories
+        uses: ./lingva-demo/.github/actions/setup-lingva
+        with:
+          repository-token: ${{ secrets.LINGVA_REPOSITORY_TOKEN || github.token }}
+      - name: Generate expected delivery artifacts
+        working-directory: lingva-demo
+        run: pnpm lingva:artifacts
+      - name: Publish and invalidate development delivery
+        if: inputs.action == 'publish'
+        working-directory: lingva-demo
+        run: pnpm hosted:publish
+      - name: Verify hosted bundles
+        working-directory: lingva-demo
+        run: pnpm hosted:verify

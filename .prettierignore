@@ -1,0 +1,6 @@
+# Lingva CLI output is copied byte-for-byte into native resource directories.
+packages/i18n/.lingva/artifacts/
+packages/i18n/.lingva/generated/
+apps/native/flutter/assets/i18n/*.json
+apps/native/kotlin/app/src/main/res/raw/*.json
+apps/native/swift/Sources/LingvaDemoCore/Resources/*.json

@@ -1,0 +1,14 @@
+{
+  "name": "@lingva-demo/i18n",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./config": "./lingva.config.ts",
+    "./project": "./.lingva/generated/project.ts"
+  },
+  "dependencies": {
+    "@lingva/core": "link:../../../lingva/packages/core"
+  }
+}

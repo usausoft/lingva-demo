@@ -1,0 +1,33 @@
+{
+  "demo": {
+    "cta": "Explore Lingva documentation",
+    "eyebrow": "Lingva framework laboratory",
+    "featureBody": "Every application reads the same Lingva keys, interpolation variables, fallback locale, and generated delivery bundles.",
+    "featureTitle": "Shared localization contract",
+    "frameworkLabel": "Current implementation",
+    "greeting": "Hello, {name}! This screen is powered by {framework}.",
+    "loading": "Loading {framework}…",
+    "localeLabel": "Language",
+    "nativeHint": "Swift, Kotlin, and Flutter consume the same versioned Lingva bundle through ecosystem-native SDK previews.",
+    "nativeTitle": "Native applications",
+    "openStandalone": "Open standalone",
+    "shellHint": "Choose an implementation. Each web demo runs as an isolated microfrontend.",
+    "shellTitle": "Framework demos",
+    "subtitle": "The same interface and translation contract rendered by independent web and native applications.",
+    "title": "One product, every framework"
+  },
+  "frameworks": {
+    "angular": "Angular",
+    "flutter": "Flutter",
+    "kotlin": "Kotlin",
+    "react": "React",
+    "svelte": "Svelte",
+    "swift": "Swift",
+    "vanilla": "JavaScript",
+    "vue": "Vue"
+  },
+  "locales": {
+    "en": "English",
+    "ru": "Russian"
+  }
+}

@@ -1,0 +1,23 @@
+name: lingva_demo
+description: A Flutter consumer of Lingva's generated delivery bundles.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  lingva_flutter:
+    path: ../../../../lingva/sdks/flutter
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/i18n/

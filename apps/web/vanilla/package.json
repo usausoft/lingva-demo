@@ -1,0 +1,18 @@
+{
+  "name": "@lingva-demo/vanilla",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4105",
+    "build": "tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "@lingva-demo/i18n": "workspace:*",
+    "@lingva/js": "link:../../../../lingva/packages/js",
+    "vite": "8.3.0"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}

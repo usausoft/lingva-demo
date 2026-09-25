@@ -1,0 +1,98 @@
+@import "../../../../packages/theme/demo.css";
+
+.shell {
+  min-height: 100vh;
+  padding: 28px;
+}
+.shell-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  max-width: 1200px;
+  margin: 0 auto 24px;
+}
+.shell-header h1 {
+  margin: 8px 0;
+  font-size: clamp(32px, 5vw, 56px);
+  color: white;
+}
+.shell-header p:not(.demo-eyebrow),
+.shell-native p {
+  color: #a5b4ce;
+}
+.shell-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1200px;
+  margin: 0 auto 14px;
+}
+.shell-tabs button {
+  border: 1px solid rgb(196 181 253 / 20%);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: #cbd5e1;
+  background: #151c32;
+  cursor: pointer;
+}
+.shell-tabs button.active {
+  color: #0b1020;
+  background: #a78bfa;
+}
+.shell-frame {
+  position: relative;
+  max-width: 1200px;
+  height: min(720px, 72vh);
+  margin: auto;
+  overflow: hidden;
+  border: 1px solid rgb(196 181 253 / 20%);
+  border-radius: 26px;
+  background: #0b1020;
+}
+.shell-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.shell-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  background: rgb(11 16 32 / 88%);
+  color: #ddd6fe;
+}
+.shell-standalone {
+  display: block;
+  width: fit-content;
+  max-width: 1200px;
+  margin: 14px auto 0;
+  color: #c4b5fd;
+}
+.shell-native {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 24px;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 20px;
+  background: rgb(17 24 39 / 70%);
+}
+.shell-native h2 {
+  margin-top: 0;
+}
+.shell-native div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media (max-width: 700px) {
+  .shell-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .shell {
+    padding: 18px;
+  }
+}

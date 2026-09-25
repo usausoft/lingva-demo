@@ -1,0 +1,179 @@
+{
+  "demo.cta": {
+    "description": "Link label for opening the Lingva documentation",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.eyebrow": {
+    "description": "Short product label above the demo title",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.featureBody": {
+    "description": "Explanation of the shared localization contract",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.featureTitle": {
+    "description": "Heading for the shared localization contract card",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.frameworkLabel": {
+    "description": "Label identifying the active framework",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.greeting": {
+    "description": "Greeting interpolated with a user and framework name",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team",
+    "tags": ["demo", "interpolation"]
+  },
+  "demo.loading": {
+    "description": "Microfrontend loading feedback interpolated with a framework name",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.localeLabel": {
+    "description": "Accessible label for locale controls",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.nativeHint": {
+    "description": "Explanation of how native applications consume Lingva bundles",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.nativeTitle": {
+    "description": "Heading for the native application list",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.openStandalone": {
+    "description": "Link label for opening a microfrontend directly",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.shellHint": {
+    "description": "Instructions shown by the microfrontend host",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.shellTitle": {
+    "description": "Main heading of the microfrontend host",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.subtitle": {
+    "description": "Supporting text shared by every framework demo",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "demo.title": {
+    "description": "Primary heading shared by every framework demo",
+    "namespace": "demo",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team",
+    "tags": ["demo", "heading"]
+  },
+  "frameworks.angular": {
+    "description": "Display name for the Angular implementation",
+    "namespace": "frameworks",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "frameworks.flutter": {
+    "description": "Display name for the Flutter implementation",
+    "namespace": "frameworks",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "frameworks.kotlin": {
+    "description": "Display name for the Kotlin implementation",
+    "namespace": "frameworks",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "frameworks.react": {
+    "description": "Display name for the React implementation",
+    "namespace": "frameworks",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "frameworks.svelte": {
+    "description": "Display name for the Svelte implementation",
+    "namespace": "frameworks",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "frameworks.swift": {
+    "description": "Display name for the Swift implementation",
+    "namespace": "frameworks",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "frameworks.vanilla": {
+    "description": "Display name for the plain JavaScript implementation",
+    "namespace": "frameworks",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "frameworks.vue": {
+    "description": "Display name for the Vue implementation",
+    "namespace": "frameworks",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "locales.en": {
+    "description": "Localized display name for English",
+    "namespace": "locales",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  },
+  "locales.ru": {
+    "description": "Localized display name for Russian",
+    "namespace": "locales",
+    "status": "approved",
+    "translator": "demo-team",
+    "reviewer": "demo-team"
+  }
+}
