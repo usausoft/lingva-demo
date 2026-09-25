@@ -9,7 +9,7 @@ This audit records what was learned by implementing the demo from Lingva's publi
 - Plain JavaScript works through the documented `createLingvaJsRuntime` API.
 - Angular, Vue, and Svelte now have first-class framework adapters and runnable SSR/browser references.
 - Publish artifacts provide a portable manifest and one JSON bundle per locale, making them suitable as the contract for non-JavaScript consumers.
-- Swift, Kotlin, and Flutter source previews now validate the versioned contract and preserve the last valid bundle after a failed refresh.
+- Swift, Kotlin, and Flutter source previews now validate the versioned contract, resolve the documented hosted URL placeholders, and preserve the last valid bundle after a failed refresh.
 
 ## Defects found
 
@@ -27,7 +27,7 @@ demo.
 
 ## Coverage gaps
 
-- Native clients are source previews rather than registry-published stable packages.
+- Native clients are source previews rather than registry-published stable packages. Their local package shapes and release gate are now CI-verified, but external publication remains deliberately disabled.
 - Persistent cache, signature/integrity, plural, rich-message, and platform lifecycle policies remain intentionally undefined.
 
 ## Recommended documentation additions

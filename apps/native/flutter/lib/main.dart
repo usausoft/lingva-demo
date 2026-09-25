@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lingva_flutter/lingva_flutter.dart';
 
+abstract final class DemoConfiguration {
+  static const bundleUrlTemplate = String.fromEnvironment(
+    'LINGVA_DEMO_BUNDLE_URL_TEMPLATE',
+  );
+}
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const LingvaDemoApp());
@@ -36,8 +42,19 @@ class _DemoScreenState extends State<DemoScreen> {
   var locale = 'en';
   late Future<LingvaBundle> bundle;
 
-  Future<LingvaBundle> loadBundle(String nextLocale) =>
-      lingva.loadAsset('assets/i18n/$nextLocale.json');
+  Future<LingvaBundle> loadBundle(String nextLocale) async {
+    if (DemoConfiguration.bundleUrlTemplate.isNotEmpty) {
+      try {
+        final target = LingvaDeliveryTarget(
+          uriTemplate: DemoConfiguration.bundleUrlTemplate,
+        );
+        return await lingva.refresh(target.uri(nextLocale));
+      } on Object {
+        // Packaged artifacts keep the app usable when hosted delivery is unavailable.
+      }
+    }
+    return lingva.loadAsset('assets/i18n/$nextLocale.json');
+  }
 
   @override
   void initState() {

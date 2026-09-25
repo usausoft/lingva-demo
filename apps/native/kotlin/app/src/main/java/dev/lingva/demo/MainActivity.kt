@@ -12,10 +12,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -26,7 +28,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.lingva.LingvaBundle
+import dev.lingva.LingvaDeliveryTarget
 import dev.lingva.LingvaBundleStore
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
     private val lingva = LingvaBundleStore()
@@ -37,6 +42,13 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun loadBundle(locale: String): LingvaBundle {
+        val hosted = BuildConfig.LINGVA_BUNDLE_URL_TEMPLATE
+            .takeIf(String::isNotBlank)
+            ?.let { template ->
+                runCatching { lingva.refresh(LingvaDeliveryTarget(template).uri(locale)) }.getOrNull()
+            }
+        if (hosted != null) return hosted
+
         val resourceId = resources.getIdentifier("lingva_$locale", "raw", packageName)
         val document = resources.openRawResource(resourceId).bufferedReader().use { it.readText() }
         return lingva.load(document)
@@ -45,8 +57,13 @@ class MainActivity : ComponentActivity() {
     @Composable
     private fun LingvaDemo() {
         var locale by remember { mutableStateOf("en") }
-        val bundle = remember(locale) { loadBundle(locale) }
+        var bundle by remember { mutableStateOf<LingvaBundle?>(null) }
         val violet = Color(0xFFA78BFA)
+
+        LaunchedEffect(locale) {
+            bundle = null
+            bundle = withContext(Dispatchers.IO) { loadBundle(locale) }
+        }
 
         MaterialTheme {
             Column(
@@ -58,6 +75,11 @@ class MainActivity : ComponentActivity() {
                     .padding(32.dp),
                 verticalArrangement = Arrangement.Center
             ) {
+                val currentBundle = bundle
+                if (currentBundle == null) {
+                    CircularProgressIndicator(color = violet)
+                    return@Column
+                }
                 Surface(
                     modifier = Modifier.fillMaxWidth(),
                     color = Color(0xD9111827),
@@ -67,35 +89,35 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(40.dp),
                         verticalArrangement = Arrangement.spacedBy(20.dp)
                     ) {
-                        Text(bundle.translate("demo.eyebrow").uppercase(), color = violet)
+                        Text(currentBundle.translate("demo.eyebrow").uppercase(), color = violet)
                         Text(
-                            bundle.translate("demo.title"),
+                            currentBundle.translate("demo.title"),
                             color = Color.White,
                             fontSize = 46.sp
                         )
-                        Text(bundle.translate("demo.subtitle"), color = Color(0xFFB8C1D9))
+                        Text(currentBundle.translate("demo.subtitle"), color = Color(0xFFB8C1D9))
                         Text(
-                            bundle.translate(
+                            currentBundle.translate(
                                 "demo.greeting",
                                 mapOf(
                                     "name" to "Lingva",
-                                    "framework" to bundle.translate("frameworks.kotlin")
+                                    "framework" to currentBundle.translate("frameworks.kotlin")
                                 )
                             ),
                             color = Color(0xFFDDD6FE)
                         )
-                        Text(bundle.translate("demo.localeLabel"), color = Color(0xFFA5B4CE))
+                        Text(currentBundle.translate("demo.localeLabel"), color = Color(0xFFA5B4CE))
                         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                             listOf("en", "ru").forEach { option ->
                                 Button(onClick = { locale = option }) {
-                                    Text(bundle.translate("locales.$option"))
+                                    Text(currentBundle.translate("locales.$option"))
                                 }
                             }
                         }
                         Surface(color = Color(0x66020617), shape = RoundedCornerShape(20.dp)) {
                             Column(modifier = Modifier.padding(22.dp)) {
-                                Text(bundle.translate("demo.featureTitle"), color = Color.White)
-                                Text(bundle.translate("demo.featureBody"), color = Color(0xFFB8C1D9))
+                                Text(currentBundle.translate("demo.featureTitle"), color = Color.White)
+                                Text(currentBundle.translate("demo.featureBody"), color = Color(0xFFB8C1D9))
                             }
                         }
                     }

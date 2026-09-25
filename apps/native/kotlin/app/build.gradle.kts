@@ -4,6 +4,8 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+val lingvaBundleUrlTemplate = providers.environmentVariable("LINGVA_DEMO_BUNDLE_URL_TEMPLATE").orElse("")
+
 android {
     namespace = "dev.lingva.demo"
     compileSdk = 36
@@ -14,9 +16,15 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "0.1.0"
+        buildConfigField(
+            "String",
+            "LINGVA_BUNDLE_URL_TEMPLATE",
+            "\"${lingvaBundleUrlTemplate.get().replace("\\", "\\\\").replace("\"", "\\\"")}\"",
+        )
     }
 
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }

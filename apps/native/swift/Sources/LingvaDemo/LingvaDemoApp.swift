@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 import Lingva
 import LingvaDemoCore
@@ -7,6 +8,15 @@ private enum DemoLocale: String, CaseIterable, Identifiable {
     case russian = "ru"
 
     var id: String { rawValue }
+}
+
+private enum DemoConfiguration {
+    static let bundleURLTemplateEnvironment = "LINGVA_DEMO_BUNDLE_URL_TEMPLATE"
+
+    static var deliveryTarget: LingvaDeliveryTarget? {
+        ProcessInfo.processInfo.environment[bundleURLTemplateEnvironment]
+            .flatMap { $0.isEmpty ? nil : LingvaDeliveryTarget(urlTemplate: $0) }
+    }
 }
 
 @main
@@ -20,10 +30,8 @@ struct LingvaDemoApp: App {
 
 private struct DemoView: View {
     @State private var locale = DemoLocale.english
-
-    private var bundle: LingvaBundle? {
-        try? LingvaBundle.load(locale: locale.rawValue)
-    }
+    @State private var bundle: LingvaBundle?
+    private let store = LingvaBundleStore()
 
     var body: some View {
         Group {
@@ -34,6 +42,18 @@ private struct DemoView: View {
             }
         }
         .frame(minWidth: 680, minHeight: 640)
+        .task(id: locale) {
+            bundle = await loadBundle(locale: locale.rawValue)
+        }
+    }
+
+    private func loadBundle(locale: String) async -> LingvaBundle? {
+        if let target = DemoConfiguration.deliveryTarget,
+           let url = try? target.url(locale: locale),
+           let hosted = try? await store.refresh(from: url) {
+            return hosted
+        }
+        return try? LingvaBundle.load(locale: locale)
     }
 }
 

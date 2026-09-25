@@ -124,7 +124,26 @@ repository is currently private, also add repository secret
 
 The native demos consume Lingva's source-level Swift, Kotlin, and Flutter SDK
 previews through local package dependencies. All three validate the versioned
-bundle contract and share the same exact-key and interpolation semantics. See
+bundle contract, resolve the public URL template, try hosted delivery first,
+and fall back to their packaged artifacts when the network is unavailable.
+
+Pass the URL template to each native toolchain as follows:
+
+```bash
+export LINGVA_DEMO_BUNDLE_URL_TEMPLATE='https://example.lambda-url.eu-west-1.on.aws/bundles/lingva-framework-demo/dev/latest/{locale}.bundle.json'
+
+LINGVA_DEMO_BUNDLE_URL_TEMPLATE="$LINGVA_DEMO_BUNDLE_URL_TEMPLATE" \
+  swift run --package-path apps/native/swift
+
+LINGVA_DEMO_BUNDLE_URL_TEMPLATE="$LINGVA_DEMO_BUNDLE_URL_TEMPLATE" \
+  pnpm build:kotlin
+
+pnpm --dir apps/native/flutter exec flutter run -d chrome \
+  --dart-define="LINGVA_DEMO_BUNDLE_URL_TEMPLATE=$LINGVA_DEMO_BUNDLE_URL_TEMPLATE"
+```
+
+These are public read-only bundle URLs; native binaries must never contain the
+publish token. See
 [DOCS_AUDIT.md](./DOCS_AUDIT.md) for the documentation findings recorded while
 building the demo.
 
