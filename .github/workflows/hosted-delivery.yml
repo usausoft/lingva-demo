@@ -21,6 +21,7 @@ jobs:
       LINGVA_DEMO_BUNDLE_URL_TEMPLATE: ${{ vars.LINGVA_DEMO_BUNDLE_URL_TEMPLATE }}
       LINGVA_DEMO_PUBLISH_API_URL: ${{ vars.LINGVA_DEMO_PUBLISH_API_URL }}
       LINGVA_DEMO_PUBLISH_TOKEN: ${{ secrets.LINGVA_DEMO_PUBLISH_TOKEN }}
+      LINGVA_DEMO_READ_API_KEY: ${{ secrets.LINGVA_DEMO_READ_API_KEY }}
     steps:
       - name: Check out demo
         uses: actions/checkout@v6

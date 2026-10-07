@@ -2,28 +2,28 @@
   "schemaVersion": 1,
   "projectId": "lingva-framework-demo",
   "environment": "dev",
-  "locale": "en",
+  "locale": "ru",
   "defaultLocale": "en",
   "fallbackLocale": "en",
-  "generatedAt": "2026-09-25T15:42:15.621Z",
+  "generatedAt": "2026-09-25T15:42:15.627Z",
   "keyCount": 25,
   "fallbackKeys": [],
   "messages": {
-    "demo.cta": "Explore Lingva documentation",
-    "demo.eyebrow": "Lingva framework laboratory",
-    "demo.featureBody": "Every application reads the same Lingva keys, interpolation variables, fallback locale, and generated delivery bundles.",
-    "demo.featureTitle": "Shared localization contract",
-    "demo.frameworkLabel": "Current implementation",
-    "demo.greeting": "Hello, {name}! This screen is powered by {framework}.",
-    "demo.loading": "Loading {framework}…",
-    "demo.localeLabel": "Language",
-    "demo.nativeHint": "Swift, Kotlin, and Flutter consume the same versioned Lingva bundle through ecosystem-native SDK previews.",
-    "demo.nativeTitle": "Native applications",
-    "demo.openStandalone": "Open standalone",
-    "demo.shellHint": "Choose an implementation. Each web demo runs as an isolated microfrontend.",
-    "demo.shellTitle": "Framework demos",
-    "demo.subtitle": "The same interface and translation contract rendered by independent web and native applications.",
-    "demo.title": "One product, every framework",
+    "demo.cta": "Открыть документацию Lingva",
+    "demo.eyebrow": "Лаборатория фреймворков Lingva",
+    "demo.featureBody": "Все приложения используют одинаковые ключи Lingva, переменные интерполяции, резервный язык и сгенерированные delivery-бандлы.",
+    "demo.featureTitle": "Единый контракт локализации",
+    "demo.frameworkLabel": "Текущая реализация",
+    "demo.greeting": "Привет, {name}! Этот экран работает на {framework}.",
+    "demo.loading": "Загрузка {framework}…",
+    "demo.localeLabel": "Язык",
+    "demo.nativeHint": "Swift, Kotlin и Flutter используют один версионированный Lingva-бандл через нативные preview SDK.",
+    "demo.nativeTitle": "Нативные приложения",
+    "demo.openStandalone": "Открыть отдельно",
+    "demo.shellHint": "Выберите реализацию. Каждое веб-демо работает как изолированный микрофронтенд.",
+    "demo.shellTitle": "Демо фреймворков",
+    "demo.subtitle": "Одинаковый интерфейс и контракт переводов в независимых веб- и нативных приложениях.",
+    "demo.title": "Один продукт для всех фреймворков",
     "frameworks.angular": "Angular",
     "frameworks.flutter": "Flutter",
     "frameworks.kotlin": "Kotlin",
@@ -32,35 +32,35 @@
     "frameworks.swift": "Swift",
     "frameworks.vanilla": "JavaScript",
     "frameworks.vue": "Vue",
-    "locales.en": "English",
-    "locales.ru": "Russian"
+    "locales.en": "Английский",
+    "locales.ru": "Русский"
   },
   "sources": {
-    "demo.cta": "en",
-    "demo.eyebrow": "en",
-    "demo.featureBody": "en",
-    "demo.featureTitle": "en",
-    "demo.frameworkLabel": "en",
-    "demo.greeting": "en",
-    "demo.loading": "en",
-    "demo.localeLabel": "en",
-    "demo.nativeHint": "en",
-    "demo.nativeTitle": "en",
-    "demo.openStandalone": "en",
-    "demo.shellHint": "en",
-    "demo.shellTitle": "en",
-    "demo.subtitle": "en",
-    "demo.title": "en",
-    "frameworks.angular": "en",
-    "frameworks.flutter": "en",
-    "frameworks.kotlin": "en",
-    "frameworks.react": "en",
-    "frameworks.svelte": "en",
-    "frameworks.swift": "en",
-    "frameworks.vanilla": "en",
-    "frameworks.vue": "en",
-    "locales.en": "en",
-    "locales.ru": "en"
+    "demo.cta": "ru",
+    "demo.eyebrow": "ru",
+    "demo.featureBody": "ru",
+    "demo.featureTitle": "ru",
+    "demo.frameworkLabel": "ru",
+    "demo.greeting": "ru",
+    "demo.loading": "ru",
+    "demo.localeLabel": "ru",
+    "demo.nativeHint": "ru",
+    "demo.nativeTitle": "ru",
+    "demo.openStandalone": "ru",
+    "demo.shellHint": "ru",
+    "demo.shellTitle": "ru",
+    "demo.subtitle": "ru",
+    "demo.title": "ru",
+    "frameworks.angular": "ru",
+    "frameworks.flutter": "ru",
+    "frameworks.kotlin": "ru",
+    "frameworks.react": "ru",
+    "frameworks.svelte": "ru",
+    "frameworks.swift": "ru",
+    "frameworks.vanilla": "ru",
+    "frameworks.vue": "ru",
+    "locales.en": "ru",
+    "locales.ru": "ru"
   },
   "variables": {
     "demo.cta": [],
@@ -282,48 +282,48 @@
   "entries": [
     {
       "key": "demo.cta",
-      "value": "Explore Lingva documentation",
-      "sourceLocale": "en",
+      "value": "Открыть документацию Lingva",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.eyebrow",
-      "value": "Lingva framework laboratory",
-      "sourceLocale": "en",
+      "value": "Лаборатория фреймворков Lingva",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.featureBody",
-      "value": "Every application reads the same Lingva keys, interpolation variables, fallback locale, and generated delivery bundles.",
-      "sourceLocale": "en",
+      "value": "Все приложения используют одинаковые ключи Lingva, переменные интерполяции, резервный язык и сгенерированные delivery-бандлы.",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.featureTitle",
-      "value": "Shared localization contract",
-      "sourceLocale": "en",
+      "value": "Единый контракт локализации",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.frameworkLabel",
-      "value": "Current implementation",
-      "sourceLocale": "en",
+      "value": "Текущая реализация",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.greeting",
-      "value": "Hello, {name}! This screen is powered by {framework}.",
-      "sourceLocale": "en",
+      "value": "Привет, {name}! Этот экран работает на {framework}.",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [
         "framework",
@@ -333,8 +333,8 @@
     },
     {
       "key": "demo.loading",
-      "value": "Loading {framework}…",
-      "sourceLocale": "en",
+      "value": "Загрузка {framework}…",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [
         "framework"
@@ -343,64 +343,64 @@
     },
     {
       "key": "demo.localeLabel",
-      "value": "Language",
-      "sourceLocale": "en",
+      "value": "Язык",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.nativeHint",
-      "value": "Swift, Kotlin, and Flutter consume the same versioned Lingva bundle through ecosystem-native SDK previews.",
-      "sourceLocale": "en",
+      "value": "Swift, Kotlin и Flutter используют один версионированный Lingva-бандл через нативные preview SDK.",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.nativeTitle",
-      "value": "Native applications",
-      "sourceLocale": "en",
+      "value": "Нативные приложения",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.openStandalone",
-      "value": "Open standalone",
-      "sourceLocale": "en",
+      "value": "Открыть отдельно",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.shellHint",
-      "value": "Choose an implementation. Each web demo runs as an isolated microfrontend.",
-      "sourceLocale": "en",
+      "value": "Выберите реализацию. Каждое веб-демо работает как изолированный микрофронтенд.",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.shellTitle",
-      "value": "Framework demos",
-      "sourceLocale": "en",
+      "value": "Демо фреймворков",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.subtitle",
-      "value": "The same interface and translation contract rendered by independent web and native applications.",
-      "sourceLocale": "en",
+      "value": "Одинаковый интерфейс и контракт переводов в независимых веб- и нативных приложениях.",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
     },
     {
       "key": "demo.title",
-      "value": "One product, every framework",
-      "sourceLocale": "en",
+      "value": "Один продукт для всех фреймворков",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "demo"
@@ -408,7 +408,7 @@
     {
       "key": "frameworks.angular",
       "value": "Angular",
-      "sourceLocale": "en",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "frameworks"
@@ -416,7 +416,7 @@
     {
       "key": "frameworks.flutter",
       "value": "Flutter",
-      "sourceLocale": "en",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "frameworks"
@@ -424,7 +424,7 @@
     {
       "key": "frameworks.kotlin",
       "value": "Kotlin",
-      "sourceLocale": "en",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "frameworks"
@@ -432,7 +432,7 @@
     {
       "key": "frameworks.react",
       "value": "React",
-      "sourceLocale": "en",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "frameworks"
@@ -440,7 +440,7 @@
     {
       "key": "frameworks.svelte",
       "value": "Svelte",
-      "sourceLocale": "en",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "frameworks"
@@ -448,7 +448,7 @@
     {
       "key": "frameworks.swift",
       "value": "Swift",
-      "sourceLocale": "en",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "frameworks"
@@ -456,7 +456,7 @@
     {
       "key": "frameworks.vanilla",
       "value": "JavaScript",
-      "sourceLocale": "en",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "frameworks"
@@ -464,23 +464,23 @@
     {
       "key": "frameworks.vue",
       "value": "Vue",
-      "sourceLocale": "en",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "frameworks"
     },
     {
       "key": "locales.en",
-      "value": "English",
-      "sourceLocale": "en",
+      "value": "Английский",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "locales"
     },
     {
       "key": "locales.ru",
-      "value": "Russian",
-      "sourceLocale": "en",
+      "value": "Русский",
+      "sourceLocale": "ru",
       "fallback": false,
       "variables": [],
       "namespace": "locales"

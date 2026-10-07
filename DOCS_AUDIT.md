@@ -10,6 +10,7 @@ This audit records what was learned by implementing the demo from Lingva's publi
 - Angular, Vue, and Svelte now have first-class framework adapters and runnable SSR/browser references.
 - Publish artifacts provide a portable manifest and one JSON bundle per locale, making them suitable as the contract for non-JavaScript consumers.
 - Swift, Kotlin, and Flutter source previews now validate the versioned contract, resolve the documented hosted URL placeholders, and preserve the last valid bundle after a failed refresh.
+- The portable CLI contract is `lingva.config.yaml`; this JavaScript monorepo keeps one nested typed `lingva.config.ts` runtime adapter and passes its path explicitly to avoid duplicating configuration.
 
 ## Defects found
 
@@ -19,6 +20,7 @@ This audit records what was learned by implementing the demo from Lingva's publi
 4. The public docs did not describe the publish bundle JSON schema as a native-consumer boundary.
 5. Generated projects imported translations from JSON without preserving literal message types, so `TranslationVariables` resolved to `Record<string, never>`.
 6. `@lingva/react` declared `react-dom` only as a development dependency. The package builder consequently bundled its CommonJS bridge into the ESM artifact and emitted a browser-fatal `node:module/createRequire` import.
+7. Native preview refresh clients and the demo described delivery as public after hosted GET routes began requiring a read-scoped key. The demo now uses a server-side read key for verification and documents the native proxy boundary.
 
 The CDN example, hosted read path, verification guidance, native bundle
 contract, missing React peer declaration, and generated interpolation typing

@@ -20,6 +20,7 @@ const manifest = JSON.parse(
   await readFile(path.join(artifactsDirectory, "manifest.json"), "utf8"),
 );
 const bundleUrlTemplate = requireHostedEnvironment("bundleUrlTemplate");
+const readApiKey = requireHostedEnvironment("readApiKey");
 
 for (const descriptor of manifest.bundles) {
   const expected = JSON.parse(
@@ -31,7 +32,13 @@ for (const descriptor of manifest.bundles) {
     manifest.projectId,
     manifest.environment,
   );
-  const response = await fetch(url, { signal: AbortSignal.timeout(10_000) });
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${readApiKey}`,
+      "x-api-key": readApiKey,
+    },
+    signal: AbortSignal.timeout(10_000),
+  });
 
   assert.equal(
     response.status,

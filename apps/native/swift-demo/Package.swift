@@ -5,24 +5,24 @@ import PackageDescription
 let package = Package(
     name: "LingvaDemo",
     platforms: [.macOS(.v14)],
-    dependencies: [
-        .package(name: "LingvaSwift", path: "../../../../lingva/sdks/swift")
-    ],
     products: [
         .executable(name: "LingvaDemo", targets: ["LingvaDemo"])
+    ],
+    dependencies: [
+        .package(path: "../../../../lingva/sdks/swift")
     ],
     targets: [
         .executableTarget(
             name: "LingvaDemo",
             dependencies: [
                 "LingvaDemoCore",
-                .product(name: "Lingva", package: "LingvaSwift")
+                .product(name: "Lingva", package: "swift")
             ]
         ),
         .target(
             name: "LingvaDemoCore",
             dependencies: [
-                .product(name: "Lingva", package: "LingvaSwift")
+                .product(name: "Lingva", package: "swift")
             ],
             resources: [.process("Resources")]
         ),
@@ -30,7 +30,7 @@ let package = Package(
             name: "LingvaDemoVerification",
             dependencies: [
                 "LingvaDemoCore",
-                .product(name: "Lingva", package: "LingvaSwift")
+                .product(name: "Lingva", package: "swift")
             ]
         )
     ]

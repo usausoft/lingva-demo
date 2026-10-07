@@ -10,7 +10,7 @@ const manifestPath = path.join(publishDirectory, "manifest.json");
 
 const nativeTargets = [
   {
-    directory: "apps/native/swift/Sources/LingvaDemoCore/Resources",
+    directory: "apps/native/swift-demo/Sources/LingvaDemoCore/Resources",
     fileName: (locale) => `${locale}.json`,
   },
   {

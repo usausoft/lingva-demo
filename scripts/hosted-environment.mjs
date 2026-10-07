@@ -2,6 +2,7 @@ const REQUIRED_ENVIRONMENT_VARIABLES = Object.freeze({
   bundleUrlTemplate: "LINGVA_DEMO_BUNDLE_URL_TEMPLATE",
   publishApiUrl: "LINGVA_DEMO_PUBLISH_API_URL",
   publishToken: "LINGVA_DEMO_PUBLISH_TOKEN",
+  readApiKey: "LINGVA_DEMO_READ_API_KEY",
 });
 
 export function requireHostedEnvironment(name) {
